@@ -49,11 +49,34 @@
         border-radius: 9999px;
       }
     </style>
+    <script>
+      const REPO_NAME = 'Wearify';
+      const getStorefrontPath = () => {
+        const { hostname, pathname } = window.location;
+        const firstSegment = pathname.split('/').filter(Boolean)[0];
+
+        if (hostname.endsWith('github.io')) {
+          return firstSegment ? `/${firstSegment}/` : `/${REPO_NAME}/`;
+        }
+
+        return '/';
+      };
+
+      window.addEventListener('DOMContentLoaded', () => {
+        const cta = document.getElementById('open-storefront');
+        const target = getStorefrontPath();
+        cta.setAttribute('href', target);
+      });
+    </script>
   </head>
   <body>
     <main>
       <h1>AURA</h1>
       <p>
+        GitHub Pages bootstrap page is active. Click the button below to open the deployed
+        storefront route directly.
+      </p>
+      <a id="open-storefront" class="cta" href="/Wearify/">Open Storefront</a>
         GitHub Pages bootstrap page is active. If your static export is deploying via Actions,
         refresh in a moment and the full storefront will load here automatically.
       </p>
