@@ -9,6 +9,10 @@
       const path = window.location.pathname;
       const firstSegment = path.split('/').filter(Boolean)[0];
       const repoRoot = firstSegment ? `/${firstSegment}/` : `/${REPO_NAME}/`;
+      // Redirect unknown paths back to repository root so GitHub Pages doesn't strand users on 404.
+      var path = window.location.pathname;
+      var parts = path.split('/').filter(Boolean);
+      var repoRoot = parts.length > 0 ? '/' + parts[0] + '/' : '/';
       window.location.replace(repoRoot);
     </script>
   </head>
