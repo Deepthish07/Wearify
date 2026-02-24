@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURA | Redirecting</title>
+    <script>
+      const REPO_NAME = 'Wearify';
+      const path = window.location.pathname;
+      const firstSegment = path.split('/').filter(Boolean)[0];
+      const repoRoot = firstSegment ? `/${firstSegment}/` : `/${REPO_NAME}/`;
+      window.location.replace(repoRoot);
+    </script>
+  </head>
+  <body></body>
+</html>
