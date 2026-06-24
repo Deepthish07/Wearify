@@ -128,6 +128,3 @@ This project is open source. Please check the LICENSE file for more information.
 
 If you have any questions or need support, please open an issue on the [GitHub repository](https://github.com/Deepthish07/Wearify/issues).
 
----
-
-**Made with ❤️ by Deepthish07**
